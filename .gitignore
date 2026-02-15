@@ -136,23 +136,5 @@ dist
 
 # Vite logs files
 vite.config.js.timestamp-*
-vite.config.ts.timestamp-*d
+vite.config.ts.timestamp-*
 
-# Dependencies
-node_modules/
-
-# Environment
-.env
-.env.*
-
-# Build output
-dist/
-coverage/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
