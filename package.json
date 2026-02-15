@@ -1,0 +1,35 @@
+{
+  "name": "sudoku_project",
+  "version": "0.0.1",
+  "description": "Sudoku express project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --coverage",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PatriciaGauntt/Sudoku-Project.git"
+  },
+  "author": "PG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatriciaGauntt/Sudoku-Project/issues"
+  },
+  "homepage": "https://github.com/PatriciaGauntt/Sudoku-Project#readme",
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.2",
+    "eslint-config-airbnb-extended": "^3.0.1",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
