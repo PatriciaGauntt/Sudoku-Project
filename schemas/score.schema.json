@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://my-app-domain/schemas/sudokulous-score",
+  "title": "SudokulousScore",
+  "description": "Schema definition for a Sudokulous leaderboard score record.",
+  "type": "object",
+  "required": [
+    "id",
+    "player_initials",
+    "time_seconds",
+    "difficulty",
+    "puzzle_seed",
+    "tracking"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Application-specific identifier derived from the first six bytes of the score record UUID."
+    },
+    "player_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12,
+      "description": "Player name displayed on the leaderboard (1-12 letters)."
+    },
+    "score_rank": {
+      "type": "number",
+      "description": "Calculated leaderboard rank at time of submission."
+    },
+    "time_seconds": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Total completion time in seconds."
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard", "evil"],
+      "description": "Difficulty level of the completed puzzle."
+    },
+    "puzzle_seed": {
+      "type": "string",
+      "description": "Identifier or seed used to generate the puzzle, allowing reproducibility and validation."
+    },
+    "mistakes": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total number of invalid moves made during gameplay."
+    },
+    "hints_used": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Number of hints used while solving the puzzle."
+    },
+    "tracking": {
+      "type": "object",
+      "required": ["uuid", "createdDate"],
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Universally unique identifier (UUID) assigned to the score record."
+        },
+        "createdDate": {
+          "type": "string",
+          "description": "The date the score was submitted to the leaderboard."
+        },
+        "updatedDate": {
+          "type": "string",
+          "description": "The most recent date the score record was updated."
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "Indicates whether the score was verified by backend puzzle validation."
+        }
+      }
+    }
+  }
+}
